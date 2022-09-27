@@ -1,6 +1,6 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Property from '../components/Property';
+import PropertyList from '../components/PropertyList';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
        <Header/>
-       <Property/>
+       <PropertyList/>
        <Footer/>
       </header>
     </div>

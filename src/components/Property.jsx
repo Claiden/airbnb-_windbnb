@@ -1,6 +1,5 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import objects from '../utils/stays.json'
 import star from '../assets/star.svg'
 
 const style ={
@@ -8,22 +7,28 @@ const style ={
 }
 
 function Property(props){
-    const [superHost, type, rating, title] = props
+    const {superHost, type, rating, title, photo} = props
     return(
-        <div style={{width:300, height:300, position:'relative'}}>
-            <div style={{width:300, height:240,}}> 
-                <img src=''/>
+        <div style={{width:400, height:310, backgroundColor:'rgba(240, 248, 255, 0.626)', margin:'1%', borderRadius:'3%'}}>
+            <div style={{width:400, height:240}}> 
+                <img src={photo} style={{width:400, height:240, borderRadius:'3%'}}/>
             </div>
-            <div>
-                <div style={{display:'grid', gridTemplateColumns:'30% 30% 30%', justifyItems:'space-evenly'}}>
+            <div style={{ width:'90%', marginLeft:'5%'}}>
+                <div style={{display:'grid', gridTemplateColumns:'35% 40% 20%', justifyContent:'space-between', marginTop:'1%'}}>
                     {
-                        superHost ?<button class='btn btn-outline-dark'>Super Host</button> : null
+                        superHost ? <button class='btn btn-outline-dark btn-sm' style={{height:'75%'}}>
+                                        SuperHost
+                                    </button> 
+                                  : null
                     }
                     <p>{type}</p>
-                    <span><img src={star}/> {rating}</span>
+                    <span>
+                        <img src={star} />
+                        {rating}
+                    </span>
                 </div>
-                <div style={{marginTop:'4%'}}>
-                    <h6>{title}</h6>
+                <div>
+                    <h6><strong>{title}</strong></h6>
                 </div>
             </div>
         </div>
